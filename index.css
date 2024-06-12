@@ -168,7 +168,6 @@
   .footer {
     color: white;
     position: absolute;
-    left: 0;
     width: 1920px;
   }
   .footer {
@@ -206,10 +205,10 @@
     cursor: pointer;
   }
   .artboard-1-1 {
-    position: absolute;
-    top: 166.7px;
-    align-content: center   ;
-    left: calc(50% - 739.5px);
+    margin-top: 50px;
+    width: auto;
+    position: relative;
+    height: 724px;
     object-fit: cover;
   }
   .about-us1 {
@@ -235,8 +234,8 @@
   }
   .team {
     top: 2652px;
-    left: 0;
-    width: 1920px;
+    align-content: center;
+    width: auto;
     height: 1127.1px;
     font-size: var(--font-size-base);
     color: var(--color-white);
@@ -411,8 +410,36 @@
 
 .text-parent {
   flex-direction: column;
-  justify-content: flex-end;
 }
+
+.team {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    height: 100vh; /* Ensure it takes the full height of the viewport if needed */
+    width: 100%; /* Ensure it takes the full width of the parent */
+  }
+  
+  .background-icon {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+  }
+  
+  .button {
+    margin-bottom: 20px; /* Adjust spacing as needed */
+  }
+  
+  .content3 {
+    text-align: center; /* Center align text inside content3 */
+  }
+  
+  .artboard-1-1 {
+    display: block;
+    margin: 0 auto; /* Center the image */
+  }
+  
 
   .about1,
   .text {

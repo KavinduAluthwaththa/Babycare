@@ -2,16 +2,48 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title> our service section</title>
+        <title> About us</title>
         <link rel="stylesheet" href="aboutus2.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 <body>
-    <h1><center> About Us </center>   </h1>
-    <p><center> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <nav>
+
+      <ul class="sidebar1">
+          <img class="logo1" src="logo.png" alt="LogoImg" id="logo">
+      </ul>
+
+      <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Information</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+      <ul>
+          <li></li>
+          <li class="hideOnMobile"><a href="#">Home</a></li>
+          <li class="hideOnMobile"><a href="#">Profile</a></li>
+          <li class="hideOnMobile"><a href="#">Information</a></li>
+          <li class="hideOnMobile"><a href="#">About</a></li>
+          <li class="hideOnMobile"><a href="#">Contact</a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      </ul>
+    </nav> 
+    <br>
+    <h1 class="abtus"><center> About Us </center> </h1>
+
+    <div class="desc">
+        <p><br><center> Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Officiis voluptatum non exercitationem tempore, doloribus, minima saepe eius rem quam aliquid 
         possimus unde consequuntur culpa voluptas dicta illo 
         perferendis dolore sequi!</center></p>
+    </div>
     <div class="body1">
         <div class="container">
             <div class="box">
@@ -40,73 +72,48 @@
             </div>
         </div>
     </div>
-    <!-- <h1><center>The Team</center></h1> -->
-    <!-- <div class="Team"> 
-        <div class="box1"> 
-            <p> Kavindu Aluthwaththa </p>
-            <img src="KA.jpg"> 
-        </div>
-        <div class="box1"> 
-            <p> Mariyeta Rodrigo </p>
-            <img src="M.jpg"> 
-        </div>
-        <div class="box1"> 
-            <p>  Chamod Chathuranga </p>
-            <img src="C.jpg"> 
-        </div>
-    </div>-->
-    <!-- Team Section ------------------------------------------------------------------------------------------------------------------>
-    <h2 class="H2nu"><center> Our <span>Team</span></center></h2>
+    
+    <!-- Team Section -->
+    <h2 class="H2nu"><center> The <span>Team</span></center></h2> <br><br><br>
 
     <section class="custom-team">
-        <!--<div class="row">
-            <div class="col-md-12">
-                <div class="siteteam-heading text-center">
-                    <!-- <h2>Meet Our<span> Team</span></h2> 
-                </div>
-            </div>
-        </div>-->
-
         <div class="custom-person">
             <div class="custom-container">
                 <div class="custom-container-inner">
                     <img class="custom-circle" src="/back.png" alt="Team Member Image" />
-                    <img class="custom-img custom-img2" src="/Images/shihan.png" />
+                    <img class="custom-img custom-img2" src="me.jpg" />
                 </div>
             </div>
-            <div class="custom-divider"></div>
-            <div class="custom-name">Shihan</div>
-            <div class="custom-title">Event Manager</div>
+            <div class="custom-name">Chamod</div>
+            <div class="custom-title"> Member </div>
         </div>
-
         <div class="custom-person">
             <div class="custom-container">
                 <div class="custom-container-inner">
                     <img class="custom-circle" src="/back.png" alt="Team Member Image" />
-                    <img class="custom-img custom-img2" src="/Images/dulaj.png" />
+                    <img class="custom-img custom-img2" src="mariya.jpg" />
                 </div>
             </div>
-            <div class="custom-divider"></div>
-            <div class="custom-name">Dulaj</div>
-            <div class="custom-title">Event Coordinator</div>
+            <div class="custom-name">Mariyeta</div>
+            <div class="custom-title">Member</div>
         </div>
-
         <div class="custom-person">
             <div class="custom-container">
                 <div class="custom-container-inner">
                     <img class="custom-circle" src="/back.png" alt="Team Member Image" />
-                    <img class="custom-img custom-img2" src="/Images/Julia.png" />
+                    <img class="custom-img custom-img2" src="kavindu.jpg" />
                 </div>
             </div>
-            <div class="custom-divider"></div>
-            <div class="custom-name">Julia</div>
-            <div class="custom-title">Customer Relations Specialist</div>
+            <div class="custom-name">Kavindu</div>
+            <div class="custom-title">Member</div>
         </div>
     </section>
-<div class="Questions">
-    <h2 class="h2q"><center> Find the Answers on frequently asked <br><b>Questions</b></center></h2><br>
-    <div class="container">
+
+  <div class="Questions">
+      <h2 class="h2q"><center> Find the Answers on frequently asked <br><b>Questions</b></center></h2><br><br>
+      <div class="container">
         <div class="accordion" id="accordionPanelsStayOpenExample">
+
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
@@ -119,6 +126,7 @@
                 </div>
               </div>
             </div>
+
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
@@ -131,6 +139,7 @@
                 </div>
               </div>
             </div>
+
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
@@ -143,6 +152,7 @@
                 </div>
               </div>
             </div>
+
             <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
@@ -155,6 +165,7 @@
                   </div>
                 </div>
             </div>
+
             <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
@@ -167,9 +178,51 @@
                   </div>
                 </div>
             </div>
+
           </div>
     </div>
 </div>
+
+<!-- footer -->
+<footer>
+  <div class="content">
+    <div class="link-boxes">
+      <ul class="box">
+          <div class="logo-details">
+              <img class="logoo" src="logo.png" alt="">
+          </div>
+      </ul>
+      <ul class="box">
+          <li class="link_name">Pages</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Information</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+
+      </ul>
+        <ul class="box">
+          <li class="link_name">Contact</li>
+          <li><a href="#">74/1,  </a></li>
+          <li><a href="#">Kandy Rd,</a></li>
+          <li><a href="#">Matale</a></li>
+        </ul> 
+        
+      <div class="top"> 
+          <div class="media-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+      </div>   
+    </div>
+  </div>
+  <div class="bottom-details">
+    <div class="bottom_text">
+      <span class="copyright_text"><center>Copyright © Baby Care</center> </span>
+    </div>
+  </div>
+</footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>    

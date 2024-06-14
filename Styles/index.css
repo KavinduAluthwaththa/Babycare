@@ -133,18 +133,17 @@ nav li:first-child{
   }
   .stay-informed-and {
     font-weight: 500;
-    padding:0 20px;
+    padding:0 50px;
   }
   .div2 {
     display: grid;
-    align-items: center;
+    align-items: start;
     grid-template-columns: 1fr 1fr;
    }
 
   .vecteezy-doctor {
-    border-radius: 50px;
+    border-radius: 30%;
     width: 80%;
-    height: 80%;
     object-fit: cover;
     padding: 0 20px;
   }
@@ -171,9 +170,10 @@ nav li:first-child{
   }
   .text2 {
     display: grid;
-    align-items: center; 
+    align-items: start; 
     grid-template-columns: 50% 50%;
-    column-gap: 5px;
+    padding:0 50px;
+    column-gap: 10px;
   }
 
   .button-parent {
@@ -206,6 +206,7 @@ nav li:first-child{
     max-width: 100%; 
     height: auto;
     display: block;
+    padding-top: 30px;
   }
   
   .banner,
@@ -281,7 +282,6 @@ footer .contentx .top {
 .contentx .top .media-icons a {
   height: 40px;
   width: 40px;
-  padding-top: 10px;
   margin: 0 8px;
   border-radius: 50%;
   text-align: center;

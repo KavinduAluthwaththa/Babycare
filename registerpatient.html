@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/hf.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+            padding: 20px;
+        }
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50px;
+        }
+        .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+        .form-container .form-box {
+            background: #fdfdfd;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p  {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        button{
+            background-color: #577b9e;
+        }
+
+        .registration-form{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;   
+        }
+        .form-box{
+            width: auto;
+        }
+        .left-side,
+        .right-side {
+            width: 48%;
+        }
+        .left-side{
+            order: 1;
+        }
+        .right-side{
+            order: 2;
+        }
+        .left-side, .right-side{
+            padding: 20px;
+
+        }
+        .left-side h6, .right-side h6 {
+            margin-top: 0;
+        }
+
+        .bottom-actions {
+            width: 100%;
+            text-align: center;
+        }
+        .bottom-actions button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="">Profile</a></li>
+        <li><a href="Information.html">Information</a></li>
+        <li><a href="aboutus2.html">About</a></li>
+        <li><a href="contact us.html">Contact</a></li>
+    </ul>
+    <ul>
+        <li><img class="logo1" src="Images/Logo.png" alt="LogoImg" id="logo"></li>
+        <li class="hideOnMobile"><a href="Home.html">Home</a></li>
+        <li class="hideOnMobile"><a href="#">Profile</a></li>
+        <li class="hideOnMobile"><a href="Information.html">Information</a></li>
+        <li class="hideOnMobile"><a href="aboutus2.html">About</a></li>
+        <li class="hideOnMobile"><a href="contact us.html">Contact</a></li>
+        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+    </ul>
+    </nav>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="Images/ParentLogin.png" alt="Description of Image">
+        </div>
+        <div class="form-container">
+            <div class="form-box">
+                
+                <h6 style="text-align: center;">Sign up to</h6><h2 style="text-align: center;font-weight: bold;">Baby Care System</h2><h6 style="text-align: center;font-size: smaller;color: #343a40;">As a Parent</h6>
+                <form class="registration-form">
+                    <div class="left-side">
+                        <h6 style="text-align: center; color: #fff;">Child</h6>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="Childs name">Childs Name</label>
+                        <input type="text" class="form-control" id="Childsname" placeholder="Enter Childs Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="DOB">Childs DOB</label>
+                        <input type="date" class="form-control" id="date" placeholder="Enter DOB">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Childs Birth Weight</label>
+                        <input type="number" class="form-control" id="weight" placeholder="Enter Childs Birth Weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password">
+                    </div>
+                   
+                </div>
+                <div class="right-side">
+                    <h6 style="color: #fff;">right-side</h6>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Mothers Name</label>
+                        <input type="text" class="form-control" id="Mothers name" placeholder="Enter mothers name">
+                    </div>
+                    <div class="form-group">
+                        <label for="moh area">MOH Area</label>
+                        <input type="text" class="form-control" id="moh area" placeholder="Enter MOH Area">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile number">Mobile Number</label>
+                        <input type="number" class="form-control" id="mobile number" placeholder="Enter Mobile Number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Confirm Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Confirm password">
+                    </div>
+                    
+                </div>
+                
+                </form>
+                <div class="bottom-actions">
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <p>Already have an account <a href="/login">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+      <footer>
+
+        <div class="div">
+          <b class="lets-start-together"> Let’s start together.</b>
+        </div>
+
+              <div class="contentx">
+                <div class="link-boxes">
+                  <ul class="box">
+                      <div class="logo-details">
+                          <img class="logoo" src="Images/Logo.png" alt="">
+                      </div>
+                  </ul>
+                  <ul class="box">
+                      <li class="link_name">Pages</li>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Information</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+        
+                  </ul>
+                    <ul class="box">
+                      <li class="link_name">Contact</li>
+                      <li>74/1, </li>
+                      <li>Kandy Rd,</li>
+                      <li>Matale</li>
+                    </ul>
+                    
+                  <div class="top">
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                  </div>   
+                  
+                </div>
+              </div>
+              <div class="bottom-details">
+                <div class="bottom_text">
+                  <span class="copyright_text">Copyright © Baby Care</span>
+                </div>
+              </div>
+            </footer>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

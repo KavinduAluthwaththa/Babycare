@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/hf.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            background: #f7f7f7;
-        }
         header {
             
             color: white;
@@ -695,40 +689,33 @@ footer .bottom-details .bottom_text .copyright_text{
 </head>
 <body>
 
-
-    <header>
-        <nav>
-        <ul class="sidebar1">
-            <img class="logo1" src="logo.png" alt="LogoImg" id="logo">
-        </ul>
-        <ul class="sidebar">
-            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Information</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li class="hideOnMobile"><a href="#">Home</a></li>
-            <li class="hideOnMobile"><a href="#">Profile</a></li>
-            <li class="hideOnMobile"><a href="#">Information</a></li>
-            <li class="hideOnMobile"><a href="#">About</a></li>
-            <li class="hideOnMobile"><a href="#">Contact</a></li>
-            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
-        </ul>
+    <nav>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="">Profile</a></li>
+        <li><a href="Information.html">Information</a></li>
+        <li><a href="aboutus2.html">About</a></li>
+        <li><a href="contact us.html">Contact</a></li>
+    </ul>
+    <ul>
+        <li><img class="logo1" src="Images/Logo.png" alt="LogoImg" id="logo"></li>
+        <li class="hideOnMobile"><a href="Home.html">Home</a></li>
+        <li class="hideOnMobile"><a href="#">Profile</a></li>
+        <li class="hideOnMobile"><a href="Information.html">Information</a></li>
+        <li class="hideOnMobile"><a href="aboutus2.html">About</a></li>
+        <li class="hideOnMobile"><a href="contact us.html">Contact</a></li>
+        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+    </ul>
     </nav>
-    </header>
-
     <div class="container">
         <div class="left-section">
-            <img src="Artboard 34.png" alt="Description of Image">
+            <img src="Images/LoginPage.png" alt="Description of Image">
         </div>
         <div class="right-section">
             <h2 style="text-align: left; font-size: medium; color: #000000;">Welcome to </h2><h3 style="color: #25169c; text-align: left; font-size: x-large;;">Baby Care System</h3>
             <a href="#" class="btn btn-google">
-                <img src="google.jpg" alt="Google Logo"> Login with Google
+                <img src="Images/google.jpg" alt="Google Logo"> Login with Google
             </a>
             <p class="lead">or</p>
             <form>
@@ -754,50 +741,57 @@ footer .bottom-details .bottom_text .copyright_text{
             </form>
         </div>
     </div>
+    <div class="footer">
+      <footer>
 
+        <div class="div">
+          <b class="lets-start-together"> Let’s start together.</b>
+        </div>
 
-   <footer>
-        <div class="content">
-          <div class="link-boxes">
-            <ul class="box">
-                <div class="logo-details">
-                    <img class="logoo" src="logo.png" alt="">
+              <div class="contentx">
+                <div class="link-boxes">
+                  <ul class="box">
+                      <div class="logo-details">
+                          <img class="logoo" src="Images/Logo.png" alt="">
+                      </div>
+                  </ul>
+                  <ul class="box">
+                      <li class="link_name">Pages</li>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Information</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+        
+                  </ul>
+                    <ul class="box">
+                      <li class="link_name">Contact</li>
+                      <li>74/1, </li>
+                      <li>Kandy Rd,</li>
+                      <li>Matale</li>
+                    </ul>
+                    
+                  <div class="top">
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                  </div>   
+                  
                 </div>
-            </ul>
-            <ul class="box">
-                <li class="link_name">Pages</li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Information</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-  
-            </ul>
-              <ul class="box">
-                <li class="link_name">Contact</li>
-                <li><a href="#">74/1,  </a></li>
-                <li><a href="#">Kandy Rd,</a></li>
-                <li><a href="#">Matale</a></li>
-              </ul>
-              
-            <div class="top">
-                <div class="media-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                  </div>
-            </div>   
-            
-          </div>
-        </div>
-        <div class="bottom-details">
-          <div class="bottom_text">
-            <span class="copyright_text"><center>Copyright © Baby Care</center> </span>
-          </div>
-        </div>
-      </footer>
+              </div>
+              <div class="bottom-details">
+                <div class="bottom_text">
+                  <span class="copyright_text">Copyright © Baby Care</span>
+                </div>
+              </div>
+            </footer>
+    </div>
+
+
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

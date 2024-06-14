@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/hf.css">
     <style>
         body {
             display: flex;
@@ -26,6 +27,7 @@
         .image-container img {
             max-width: 100%;
             height: auto;
+            border-radius: 50px;
         }
         .form-container {
             flex: 1;
@@ -37,18 +39,6 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        header, footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
 
         p  {
             text-align: center;
@@ -59,645 +49,66 @@
             background-color: #577b9e;
         }
 
-        Header-css
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    min-height: 100vh;
-    background-color: #1a1e21;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-nav{
-    background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-nav li{
-    height: 50px;
-}
-nav a{
-    height: 100%;
-    padding: 0 30px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: black;
-}
-nav a:hover{
-    background-color: #f0f0f0;
-}
-nav li:first-child{
-    margin-right: auto;
-}
-.sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.sidebar1 .logo1{
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    margin: 20px 1220px -50px 0px ;
-}
-.sidebar li{
-    width: 100%;
-}
-.sidebar a{
-    width: 100%;
-}
-.menu-button{
-    display: none;
-}
-@media(max-width: 800px){
-    .hideOnMobile{
-        display: none;
-    }
-    .menu-button{
-        display: block;
-    }
-}
-@media(max-width: 400px){
-    .sidebar{
-        width: 100%;
-    }
-}
+        .registration-form{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;   
+        }
+        .form-box{
+            width: auto;
+        }
+        .left-side,
+        .right-side {
+            width: 48%;
+        }
+        .left-side{
+            order: 1;
+        }
+        .right-side{
+            order: 2;
+        }
+        .left-side, .right-side{
+            padding: 20px;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
-}
-body{
-  min-height: 100vh;
-  width: 100%;
-  background: #EEECEB;
-}
-footer{
-  background: #EEECEB;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-footer::before{
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 100px;
-  height: 1px;
-  width: 0;
-  background: #AFAFB6;
-}
-footer .content{
-  max-width: 1250px;
-  margin: auto;
-  padding: 30px 40px 40px 40px;
-}
-footer .content .top{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-.content .logo-details .logoo {
-    border-radius: 50%;
-    height: 80px;
-    left: 10px;
-    top: 210px;
-    width: 80px;
-}
-.content .top .media-icons{
-  display: flex;
-}
-.content .top .media-icons a{
-  height: 40px;
-  width: 40px;
-  margin: 0 8px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  font-size: 17px;
-  text-decoration: none;
-  transition: all 0.4s ease;
-}
-.top .media-icons a:nth-child(5){
-  background: #000000;
-}
-.top .media-icons a:nth-child(1){
-  background: #000000;
-}
-.top .media-icons a:nth-child(1):hover{
-  color: #4267B2;
-  background: #fff;
-}
-.top .media-icons a:nth-child(2){
-  background: #000000;
-}
-.top .media-icons a:nth-child(2):hover{
-  color: #1DA1F2;
-  background: #fff;
-}
-.top .media-icons a:nth-child(3){
-  background: #000000;
-}
-.top .media-icons a:nth-child(3):hover{
-  color: #6b0b7e;
-  background: #fff;
-}
-.top .media-icons a:nth-child(4){
-  background: #000000;
-}
-.top .media-icons a:nth-child(4):hover{
-  color: #0077B5;
-  background: #fff;
-}
-.top .media-icons a:nth-child(5):hover{
-  color: #b50000;
-  background: #fff;
-}
-footer .content .link-boxes{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-footer .content .link-boxes .box{
-  width: calc(100% / 5 - 10px);
-}
-.content .link-boxes .box .link_name{
-  color: #030303;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  position: relative;
-}
-.link-boxes .box .link_name::before{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  height: 2px;
-  width: 35px;
-  background: #000000;
-}
-.content .link-boxes .box li{
-  margin: 6px 0;
-  list-style: none;
-}
-.content .link-boxes .box li a{
-  color: #000000;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: all 0.4s ease
-}
-.content .link-boxes .box li a:hover{
-  opacity: 1;
-  text-decoration: underline;
-}
-.content .link-boxes .input-box{
-  margin-right: 55px;
-}
-.link-boxes .input-box input{
-  height: 40px;
-  width: calc(100% + 55px);
-  outline: none;
-  border: 2px solid #AFAFB6;
-  background: #140B5C;
-  border-radius: 4px;
-  padding: 0 15px;
-  font-size: 15px;
-  color: #fff;
-  margin-top: 5px;
-}
-.link-boxes .input-box input::placeholder{
-  color: #AFAFB6;
-  font-size: 16px;
-}
-.link-boxes .input-box input[type="button"]{
-  background: #fff;
-  color: #140B5C;
-  border: none;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 4px 0;
-  opacity: 0.8;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-.input-box input[type="button"]:hover{
-  opacity: 1;
-}
-footer .bottom-details{
-  width: 100%;
-  background: #AFAFB6;
-}
-footer .bottom-details .bottom_text{
-  max-width: 1250px;
-  margin: auto;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-}
-footer .bottom-details .bottom_text .copyright_text{
-    margin-left: 40%;
-}
+        }
+        .left-side h6, .right-side h6 {
+            margin-top: 0;
+        }
 
-.bottom-details .bottom_text span,
-.bottom-details .bottom_text a{
-  font-size: 14px;
-  font-weight: 300;
-  color: #000000;
-  opacity: 0.8;
-  text-decoration: none;
-}
-.bottom-details .bottom_text a:hover{
-  opacity: 1;
-  text-decoration: underline;
-}
-.bottom-details .bottom_text a{
-  margin-right: 10px;
-}
-@media (max-width: 900px) {
-  footer .content .link-boxes{
-    flex-wrap: wrap;
-  }
-  footer .content .link-boxes .input-box{
-    width: 40%;
-    margin-top: 10px;
-  }
-}
-@media (max-width: 700px){
-  footer{
-    position: relative;
-  }
-  .content .top .logo-details{
-    font-size: 26px;
-  }
-  .content .top .media-icons a{
-    height: 35px;
-    width: 35px;
-    font-size: 14px;
-    line-height: 35px;
-  }
-  footer .content .link-boxes .box{
-    width: calc(100% / 3 - 10px);
-  }
-  footer .content .link-boxes .input-box{
-    width: 60%;
-  }
-  .bottom-details .bottom_text{
-    font-size: 12px;
-    align-items: center;
-  }
-}
-@media (max-width: 520px){
-  footer::before{
-    top: 145px;
-  }
-  footer .content .top{
-    flex-direction: column;
-  }
-  .content .top .media-icons{
-    margin-top: 16px;
-  }
-  footer .content .link-boxes .box{
-    width: calc(100% / 2 - 10px);
-  }
-
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
-}
-body{
-  min-height: 100vh;
-  width: 100%;
-  background: #EEECEB;
-}
-footer{
-  background: #EEECEB;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-footer::before{
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 100px;
-  height: 1px;
-  width: 0;
-  background: #AFAFB6;
-}
-footer .content{
-  max-width: 1250px;
-  margin: auto;
-  padding: 30px 40px 40px 40px;
-}
-footer .content .top{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-.content .logo-details .logoo {
-    border-radius: 50%;
-    height: 80px;
-    left: 10px;
-    top: 210px;
-    width: 80px;
-}
-.content .top .media-icons{
-  display: flex;
-}
-.content .top .media-icons a{
-  height: 40px;
-  width: 40px;
-  margin: 0 8px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-size: 17px;
-  text-decoration: none;
-  transition: all 0.4s ease;
-}
-.top .media-icons a:nth-child(1){
-  background: #000000;
-}
-.top .media-icons a:nth-child(1):hover{
-  color: #4267B2;
-  background: #fff;
-}
-.top .media-icons a:nth-child(2){
-  background: #000000;
-}
-.top .media-icons a:nth-child(2):hover{
-  color: #1DA1F2;
-  background: #fff;
-}
-.top .media-icons a:nth-child(3){
-  background: #000000;
-}
-.top .media-icons a:nth-child(3):hover{
-  color: #E1306C;
-  background: #fff;
-}
-.top .media-icons a:nth-child(4){
-  background: #000000;
-}
-.top .media-icons a:nth-child(4):hover{
-  color: #0077B5;
-  background: #fff;
-}
-footer .content .link-boxes{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-footer .content .link-boxes .box{
-  width: calc(100% / 5 - 10px);
-}
-.content .link-boxes .box .link_name{
-  color: #030303;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  position: relative;
-}
-.link-boxes .box .link_name::before{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  height: 2px;
-  width: 35px;
-  background: #000000;
-}
-.content .link-boxes .box li{
-  margin: 6px 0;
-  list-style: none;
-}
-.content .link-boxes .box li a{
-  color: #000000;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: all 0.4s ease
-}
-.content .link-boxes .box li a:hover{
-  opacity: 1;
-  text-decoration: underline;
-}
-.content .link-boxes .input-box{
-  margin-right: 55px;
-}
-.link-boxes .input-box input{
-  height: 40px;
-  width: calc(100% + 55px);
-  outline: none;
-  border: 2px solid #AFAFB6;
-  background: #577b9e;
-  border-radius: 4px;
-  padding: 0 15px;
-  font-size: 15px;
-  color: #fff;
-  margin-top: 5px;
-}
-.link-boxes .input-box input::placeholder{
-  color: #AFAFB6;
-  font-size: 16px;
-}
-.link-boxes .input-box input[type="button"]{
-  background: #fff;
-  color: #140B5C;
-  border: none;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 4px 0;
-  opacity: 0.8;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-.input-box input[type="button"]:hover{
-  opacity: 1;
-}
-footer .bottom-details{
-  width: 100%;
-  background: #AFAFB6;
-}
-footer .bottom-details .bottom_text{
-  max-width: 1250px;
-  margin: auto;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-}
-footer .bottom-details .bottom_text .copyright_text{
-    margin-left: 40%;
-}
-
-.bottom-details .bottom_text span,
-.bottom-details .bottom_text a{
-  font-size: 14px;
-  font-weight: 300;
-  color: #000000;
-  opacity: 0.8;
-  text-decoration: none;
-}
-.bottom-details .bottom_text a:hover{
-  opacity: 1;
-  text-decoration: underline;
-}
-.bottom-details .bottom_text a{
-  margin-right: 10px;
-}
-@media (max-width: 900px) {
-  footer .content .link-boxes{
-    flex-wrap: wrap;
-  }
-  footer .content .link-boxes .input-box{
-    width: 40%;
-    margin-top: 10px;
-  }
-}
-@media (max-width: 700px){
-  footer{
-    position: relative;
-  }
-  .content .top .logo-details{
-    font-size: 26px;
-  }
-  .content .top .media-icons a{
-    height: 35px;
-    width: 35px;
-    font-size: 14px;
-    line-height: 35px;
-  }
-  footer .content .link-boxes .box{
-    width: calc(100% / 3 - 10px);
-  }
-  footer .content .link-boxes .input-box{
-    width: 60%;
-  }
-  .bottom-details .bottom_text{
-    font-size: 12px;
-    align-items: center;
-  }
-}
-@media (max-width: 520px){
-  footer::before{
-    top: 145px;
-  }
-  footer .content .top{
-    flex-direction: column;
-  }
-  .content .top .media-icons{
-    margin-top: 16px;
-  }
-  footer .content .link-boxes .box{
-    width: calc(100% / 2 - 10px);
-  }
-
-}
-
-.registration-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-}
-
-.form-box{
-    width: auto;
-}
-.left-side, .right-side {
-    width: 48%;
-}
-.left-side{
-    order: 1;
-}
-.right-side{
-    order: 2;
-}
-.left-side, .right-side{
-    padding: 20px;
-
-}
-
-.left-side h6, .right-side h6 {
-    margin-top: 0;
-}
-
-.bottom-actions {
-    width: 100%;
-    text-align: center;
-}
-.bottom-actions button{
-    padding: 10px 20px;
-}
-
+        .bottom-actions {
+            width: 100%;
+            text-align: center;
+        }
+        .bottom-actions button{
+            padding: 10px 20px;
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <ul class="sidebar1">
-            <img class="logo1" src="logo.png" alt="LogoImg" id="logo">
-        </ul>
-        <ul class="sidebar">
-            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Information</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <ul>
-            <li></li>
-            <li class="hideOnMobile"><a href="#">Home</a></li>
-            <li class="hideOnMobile"><a href="#">Profile</a></li>
-            <li class="hideOnMobile"><a href="#">Information</a></li>
-            <li class="hideOnMobile"><a href="#">About</a></li>
-            <li class="hideOnMobile"><a href="#">Contact</a></li>
-            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
-        </ul>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="">Profile</a></li>
+        <li><a href="Information.html">Information</a></li>
+        <li><a href="aboutus2.html">About</a></li>
+        <li><a href="contact us.html">Contact</a></li>
+    </ul>
+    <ul>
+        <li><img class="logo1" src="Images/Logo.png" alt="LogoImg" id="logo"></li>
+        <li class="hideOnMobile"><a href="Home.html">Home</a></li>
+        <li class="hideOnMobile"><a href="#">Profile</a></li>
+        <li class="hideOnMobile"><a href="Information.html">Information</a></li>
+        <li class="hideOnMobile"><a href="aboutus2.html">About</a></li>
+        <li class="hideOnMobile"><a href="contact us.html">Contact</a></li>
+        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+    </ul>
     </nav>
-
-
-
 
     <div class="container">
         <div class="image-container">
-            <img src="Mesa de trabajo 1.png" alt="Description of Image">
+            <img src="Images/ParentLogin.png" alt="Description of Image">
         </div>
         <div class="form-container">
             <div class="form-box">
@@ -763,50 +174,54 @@ footer .bottom-details .bottom_text .copyright_text{
         </div>
     </div>
 
+    <div class="footer">
+      <footer>
 
+        <div class="div">
+          <b class="lets-start-together"> Let’s start together.</b>
+        </div>
 
-    <footer>
-        <div class="content">
-          <div class="link-boxes">
-            <ul class="box">
-                <div class="logo-details">
-                    <img class="logoo" src="logo.png" alt="">
+              <div class="contentx">
+                <div class="link-boxes">
+                  <ul class="box">
+                      <div class="logo-details">
+                          <img class="logoo" src="Images/Logo.png" alt="">
+                      </div>
+                  </ul>
+                  <ul class="box">
+                      <li class="link_name">Pages</li>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Information</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+        
+                  </ul>
+                    <ul class="box">
+                      <li class="link_name">Contact</li>
+                      <li>74/1, </li>
+                      <li>Kandy Rd,</li>
+                      <li>Matale</li>
+                    </ul>
+                    
+                  <div class="top">
+                      <div class="media-icons">
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                  </div>   
+                  
                 </div>
-            </ul>
-            <ul class="box">
-                <li class="link_name">Pages</li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Information</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-  
-            </ul>
-              <ul class="box">
-                <li class="link_name">Contact</li>
-                <li><a href="#">74/1,  </a></li>
-                <li><a href="#">Kandy Rd,</a></li>
-                <li><a href="#">Matale</a></li>
-              </ul>
-              
-            <div class="top">
-                <div class="media-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                  </div>
-            </div>   
-            
-          </div>
-        </div>
-        <div class="bottom-details">
-          <div class="bottom_text">
-            <span class="copyright_text"><center>Copyright © Baby Care</center> </span>
-          </div>
-        </div>
-      </footer>
+              </div>
+              <div class="bottom-details">
+                <div class="bottom_text">
+                  <span class="copyright_text">Copyright © Baby Care</span>
+                </div>
+              </div>
+            </footer>
+    </div>
 
 
     <!-- Bootstrap JS and dependencies -->

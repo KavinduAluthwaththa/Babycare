@@ -20,7 +20,6 @@ nav{
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 nav ul{
-  padding-top: 10px;
   width: 100%;
   list-style: none;
   display: flex;
@@ -93,7 +92,7 @@ nav li:first-child{
     font-size: 50px;
 }
 .body1{
-    background-color: #000000;
+    background-color: #030303;
 }
 .body2{
     margin-left: 5%;
@@ -118,6 +117,7 @@ th,td {
 }
 td{
     width: calc(100%/2); 
+    align-content: start;
 }
 #sld{
 	opacity:0;
@@ -132,6 +132,7 @@ td{
  
 }
 .body1 .body2 h2{
+    padding-bottom: 20px;
     font-size: 40px;
     font-family:sans-serif;
     color:white;
@@ -147,6 +148,7 @@ p{
   font-size: 20px;
   color:white;
   margin-left: 30%;
+  margin-bottom: -10px;
 }
 .vac1 {
   border: 5px solid #ffffff;
@@ -360,8 +362,8 @@ footer .bottom-details .bottom_text {
 }
 
 footer .bottom-details .bottom_text .copyright_text {
-  text-align: center; /* Center text for better alignment on smaller screens */
-  width: 100%; /* Full width on smaller screens */
+  text-align: center; 
+  width: 100%;
 }
 
 .bottom-details .bottom_text span,

@@ -731,27 +731,28 @@ footer .bottom-details .bottom_text .copyright_text{
             </a>
           
             <p class="lead">or</p>
-            <form>
-                <div class="form-group">
-                    <!--<label for="email">Enter email address</label>-->
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <!--<label for="password">Enter password</label>-->
-                    <input type="password" class="form-control" id="password" placeholder="Enter password">
-                </div>
-                <div class="form-check">
-                    <div>
-                        <input type="checkbox" class="form-check-input" id="remember">
-                        <label class="form-check-label" for="remember">Remember me</label>
-                    </div>
-                    <a href="#">Forgot password?</a>
-                </div>
-                <button type="submit" class="btn btn-primary mt-3" style="background-color: #6358DC;">Login</button>
-                <div class="register-link">
-                    <p>Don't have an account ? <a href="registerpatient.html">Register</a></p>
-                </div>
-            </form>
+            <form action="PHP/Login.php" method="post">
+              <div class="form-group">
+                  <!--<label for="email">Enter email address</label>-->
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                  <!--<label for="password">Enter password</label>-->
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+              </div>
+              <div class="form-check">
+                  <div>
+                      <input type="checkbox" class="form-check-input" id="remember">
+                      <label class="form-check-label" for="remember">Remember me</label>
+                  </div>
+                  <a href="#">Forgot password?</a>
+              </div>
+              <button type="submit" class="btn btn-primary mt-3" style="background-color: #6358DC;">Login</button>
+              <div class="register-link">
+                  <p>Don't have an account ? <a href="registermidwife.html">Register</a></p>
+              </div>
+          </form>
+          
         </div>
     </div>
     <div class="footer">

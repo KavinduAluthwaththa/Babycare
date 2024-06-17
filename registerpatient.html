@@ -119,62 +119,63 @@
         <div class="form-container">
             <div class="form-box">
                 
-                <h6 style="text-align: center;">Sign up to</h6><h2 style="text-align: center;font-weight: bold;">Baby Care System</h2><h6 style="text-align: center;font-size: smaller;color: #343a40;">As a Parent</h6>
-                <form class="registration-form">
+                <h6 style="text-align: center;">Sign up to</h6>
+                <h2 style="text-align: center; font-weight: bold;">Baby Care System</h2>
+                <h6 style="text-align: center; font-size: smaller; color: #343a40;">As a Parent</h6>
+                
+                <form class="registration-form" action="PHP/RegisterParent.php" method="post">
                     <div class="left-side">
                         <h6 style="text-align: center; color: #fff;">Child</h6>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="childsname">Child's Name</label>
+                            <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Enter Child's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Child's DOB</label>
+                            <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter DOB" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Child's Birth Weight</label>
+                            <input type="number" class="form-control" id="weight" name="weight" placeholder="Enter Child's Birth Weight" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="Childs name">Childs Name</label>
-                        <input type="text" class="form-control" id="Childsname" placeholder="Enter Childs Name">
+                    <div class="right-side">
+                        <h6 style="color: #fff;">Parent</h6>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mothersname">Mother's Name</label>
+                            <input type="text" class="form-control" id="mothersname" name="mothersname" placeholder="Enter mother's name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="moharea">MOH Area</label>
+                            <input type="text" class="form-control" id="moharea" name="moharea" placeholder="Enter MOH Area" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobilenumber">Mobile Number</label>
+                            <input type="number" class="form-control" id="mobilenumber" name="mobilenumber" placeholder="Enter Mobile Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm password" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="DOB">Childs DOB</label>
-                        <input type="date" class="form-control" id="date" placeholder="Enter DOB">
-                    </div>
-                    <div class="form-group">
-                        <label for="weight">Childs Birth Weight</label>
-                        <input type="number" class="form-control" id="weight" placeholder="Enter Childs Birth Weight">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter password">
-                    </div>
-                   
-                </div>
-                <div class="right-side">
-                    <h6 style="color: #fff;">right-side</h6>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <label for="text">Mothers Name</label>
-                        <input type="text" class="form-control" id="Mothers name" placeholder="Enter mothers name">
-                    </div>
-                    <div class="form-group">
-                        <label for="moh area">MOH Area</label>
-                        <input type="text" class="form-control" id="moh area" placeholder="Enter MOH Area">
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile number">Mobile Number</label>
-                        <input type="number" class="form-control" id="mobile number" placeholder="Enter Mobile Number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="password">Confirm Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Confirm password">
-                    </div>
-                    
-                </div>
-                
+
                 </form>
+
                 <div class="bottom-actions">
                     <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    <p>Already have an account ? <a href="/login">Login</a></p>
+                    <p>Already have an account ? <a href="loginparent.html">Login</a></p>
                 </div>
             </div>
         </div>

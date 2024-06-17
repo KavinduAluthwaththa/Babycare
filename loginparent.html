@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Options Page</title>
+    <title>Login Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap"/>
@@ -12,56 +12,101 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"/>
     <link rel="stylesheet" href="Styles/hf.css">
+    <link rel="stylesheet" href="Styles/login.css">
     <style>
         .container {
             display: flex;
-            align-items: start;
             flex: 1;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
         }
-        .left-section {
+        .left-section, .right-section {
             flex: 1;
-            margin-right: 20px;
             text-align: center;
         }
-        .left-section p {
-            margin-bottom: 20px;
-        }
-        .left-section .options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        .left-section .options a {
-            background: #6358DC;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            text-align: center;
-            transition: background 0.3s ease;
-            width: 500px;
-        }
-        .left-section .options a:hover {
-            background: #b8d3f0;
+        .left-section img {
+            max-width: 100%;
+            height: auto;
         }
         .right-section {
-            flex: 1;
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .right-section .form-group {
+            margin-bottom: 15px;
+        }
+        .right-section .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .right-section .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .right-section .form-check input {
+            margin-right: 5px;
+        }
+        .right-section .btn {
+            width: 100%;
+        }
+        .right-section .register-link {
+            margin-top: 20px;
             text-align: center;
         }
-        .right-section img {
-            max-width: 100%;
-            border-radius: 50px;
-            height: auto;
+        
+        .google-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .google-link img {
+            margin-right: 10px;
+            height: 20px;
+        }
+
+        .btn-google {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e0e4e9;
+            border: #343a40;
+            color: rgb(8, 8, 8);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-google img {
+            margin-right: 10px;
+            height: 20px;
+        }
+
+        .btn-google:hover {
+            background-color: #577b9e;
+        }
+
+        .right-section .btn-login {
+            background-color: #577b9e;
         }
 
     </style>
 </head>
 <body>
 
-  <nav>
+    <nav>
     <ul class="sidebar">
         <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
         <li><a href="Home.html">Home</a></li>
@@ -79,23 +124,47 @@
         <li class="hideOnMobile"><a href="contact us.html">Contact</a></li>
         <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
     </ul>
-  </nav>
+    </nav>
 
     <div class="container">
         <div class="left-section">
-            <p><h6>Welcome to</h6>
-              <h2 style="font-weight: bold;">Baby Care System</h2>
-              <h6 style="color: #AFAFB6 lighter;">Are you a Parent or Midwife</h6></p>
-            <div class="options">
-                <a href="loginparent.html">A Parent</a>
-                <a href="loginmidwife.html">A Midwife</a>
-            </div>
+            <img src="Images/LoginPage.png" alt="Description of Image">
         </div>
         <div class="right-section">
-            <img src="Images/Option.png" alt="Description of Image">
+            <div class="welcome1">Welcome to </div>
+            <div class="welcome">Baby Care System</div>
+            <br>
+            <a href="#" class="btn btn-light" style="height: 40px; display: inline-flex;justify-content: center;">
+
+              <img src="Images/google.png" alt="Google Logo" style="height: 20px; margin-right: 10px;">
+              <div class="gog" style="color: black;">Login with Google</div>
+
+            </a>
+          
+            <p class="lead">or</p>
+            <form action="PHP/Loginp.php" method="post">
+                <div class="form-group">
+                    <!--<label for="email">Enter email address</label>-->
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <!--<label for="password">Enter password</label>-->
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                </div>
+                <div class="form-check">
+                    <div>
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" style="background-color: #6358DC;">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account ? <a href="registerpatient.html">Register</a></p>
+                </div>
+            </form>
         </div>
     </div>
-
     <div class="footer">
       <footer>
 
@@ -144,6 +213,8 @@
               </div>
             </footer>
     </div>
+
+
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

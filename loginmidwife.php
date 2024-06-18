@@ -761,7 +761,7 @@ footer .bottom-details .bottom_text .copyright_text{
               </div>
               <button type="submit" class="btn btn-primary mt-3" style="background-color: #6358DC;">Login</button>
               <div class="register-link">
-                  <p>Don't have an account ? <a href="registermidwife.html">Register</a></p>
+                  <p>Don't have an account ? <a href="registermidwife.php">Register</a></p>
               </div></form>
           
         </div>

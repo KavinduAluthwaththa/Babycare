@@ -1,65 +1,150 @@
-<?php
-session_start();
+<?php session_start(); ?>
 
-include "DBcon.php";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page Midwife</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Styles/register.css" rel="stylesheet">
+</head>
+<body>
 
-if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['username']) && isset($_POST['moh']) && isset($_POST['wno']) && isset($_POST['tno']) && isset($_POST['nic'])) {
+    <div class="container">
+    <div class="row">
+        <div class="col">
 
-    function validate($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+            <div class="image-container">
+                <img src="Images/regmidwife.png" alt="Midwife Registration">
+            </div>
 
-    $fname = validate($_POST['fname']);
-    $lname = validate($_POST['lname']);
-    $username = validate($_POST['username']);
-    $email = validate($_POST['email']);
-    $password = validate($_POST['password']);
-    $moh = validate($_POST['moh']);
-    $wno = validate($_POST['wno']);
-    $tno = validate($_POST['tno']);
-    $nic = validate($_POST['nic']);
+        </div>
 
-    if (empty($email) || empty($password) || empty($fname) || empty($lname) || empty($username) || empty($moh) || empty($wno) || empty($tno) || empty($nic)) {
-        header("Location: registermidwife.html?error=All fields are required");
-        exit();
-    } else {
-        // Check if email already exists
-        $sql = "SELECT * FROM midwife WHERE Email=?";
-        $stmt = mysqli_stmt_init($conn);
+        <div class="col">
+
+        <div class="form-container">
+            <div class="form-box">
+                <h6 style="text-align: center;">Sign up to</h6>
+                <h2 style="text-align: center; font-weight: bold;">Baby Care System</h2>
+                <h6 style="text-align: center; font-size: smaller; color: #343a40;">As a Parent</h6>
+
+                <form class="registration-form" action="regmid.php" method="post">
+                    
+                    <div class="container">
+                        <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                            </div>
+                        </div>
         
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            echo "SQL error";
-            exit();
-        } else {
-            mysqli_stmt_bind_param($stmt, "s", $email);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" required>
+                            </div>
+                        </div>
+        
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" required>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="moh">MOH Area</label>
+                                    <input type="text" class="form-control" id="moh" name="moh" placeholder="Enter MOH Area" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="nic">NIC</label>
+                                    <input type="tel" class="form-control" id="nic" name="nic" placeholder="Enter NIC" required>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="wno">Mobile Number</label>
+                                    <input type="tel" class="form-control" id="wno" name="wno" placeholder="Enter Whatsapp Number" required>
+                                </div>
+                            </div>
+        
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="tno">Mobile Number</label>
+                                    <input type="tel" class="form-control" id="tno" name="tno" placeholder="Enter Mobile Number" required>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                </div>
+                            </div>
+        
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="confirmpassword">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+                                </div>
+                            </div>
+                        </div>
 
-            if (mysqli_num_rows($result) > 0) {
-                header("Location: registermidwife.html?error=Email already exists");
-                exit();
-            } else {
-                // Insert new user
-                $sql = "INSERT INTO midwife (Fname, Lname, Username, Email, Password, MOH, Wno, Tno, NIC) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        <div class="row">
+                            <div class="col">
+                            <?php
+                                if(isset($_SESSION['message'])) {
+                                    echo '<h4 class="alert alert-warning">'.$_SESSION['message'].'</h4>';
+                                    unset($_SESSION['message']);
+                                }
+                            ?>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col">
+                                <div class="bottom-actions">
+                                    <button type="submit" name="register_btn" class="btn btn-primary btn-block">Register</button>
+                                    <p>Already have an account ? <a href="loginmidwife.php">Login</a></p>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
                 
-                if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    echo "SQL error";
-                    exit();
-                } else {
-                    $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
-                    mysqli_stmt_bind_param($stmt, "sssssssss", $fname, $lname, $username, $email, $hashed_password, $moh, $wno, $tno, $nic);
-                    mysqli_stmt_execute($stmt);
-                    header("Location: index.php?success=Account created successfully");
-                    exit();
-                }
-            }
-        }
-    }
-} else {
-    header("Location: registermidwife.html");
-    exit();
-}
-?>
+                </form>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

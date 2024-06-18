@@ -1,12 +1,9 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
 }
 .container {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     flex: 1;
     padding: 20px;
@@ -16,9 +13,9 @@ body {
     text-align: center;
 }
 .image-container img {
-    max-width: 100%;
-    border-radius: 50px;
+    width: 100%;
     height: auto;
+    border-radius: 50px;
 }
 .form-container {
     flex: 1;
@@ -30,18 +27,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-header, footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
 
 p  {
     text-align: center;
@@ -51,33 +36,8 @@ p  {
 button{
     background-color: #577b9e;
 }
-
-.registration-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-}
-
 .form-box{
     width: auto;
-}
-.left-side, .right-side {
-    width: 48%;
-}
-.left-side{
-    order: 1;
-}
-.right-side{
-    order: 2;
-}
-.left-side, .right-side{
-    padding: 20px;
-
-}
-
-.left-side h6, .right-side h6 {
-    margin-top: 0;
 }
 
 .bottom-actions {
@@ -87,3 +47,10 @@ button{
 .bottom-actions button{
     padding: 10px 20px;
 }
+.alert-warning {
+    font-size: small;
+    color: #ff0019;
+    border-radius: 5px;
+    text-align: center;
+}
+

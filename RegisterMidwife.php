@@ -27,7 +27,7 @@
             <div class="form-box">
                 <h6 style="text-align: center;">Sign up to</h6>
                 <h2 style="text-align: center; font-weight: bold;">Baby Care System</h2>
-                <h6 style="text-align: center; font-size: smaller; color: #343a40;">As a Parent</h6>
+                <h6 style="text-align: center; font-size: smaller; color: #343a40;">As a Midwife</h6>
 
                 <form class="registration-form" action="regmid.php" method="post">
                     
@@ -110,6 +110,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <br>
 
                         <div class="row">
                             <div class="col">

@@ -3,7 +3,7 @@ session_start();
 
 include "DBcon.php";
 
-if (isset($_POST['username']) && isset($_POST['childsname']) && isset($_POST['dob']) && isset($_POST['weight']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['mothersname']) && isset($_POST['moharea']) && isset($_POST['mobilenumber']) && isset($_POST['confirmpassword'])) {
+if (isset($_POST['username']) && isset($_POST['childsname']) && isset($_POST['moh']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['lastname']) && isset($_POST['mobilenumber']) && isset($_POST['confirmpassword'])) {
 
     function validate($data) {
         $data = trim($data);
@@ -14,17 +14,15 @@ if (isset($_POST['username']) && isset($_POST['childsname']) && isset($_POST['do
 
     $username = validate($_POST['username']);
     $childsname = validate($_POST['childsname']);
-    $dob = validate($_POST['dob']);
-    $weight = validate($_POST['weight']);
+    $moh = validate($_POST['moh']);
     $password = validate($_POST['password']);
     $email = validate($_POST['email']);
-    $mothersname = validate($_POST['mothersname']);
-    $moharea = validate($_POST['moharea']);
+    $lastname = validate($_POST['lastname']);
     $mobilenumber = validate($_POST['mobilenumber']);
     $confirmpassword = validate($_POST['confirmpassword']);
 
-    if (empty($username) || empty($childsname) || empty($dob) || empty($weight) || empty($password) || empty($email) || empty($mothersname) || empty($moharea) || empty($mobilenumber) || empty($confirmpassword)) {
-        header("index.php?error=All fields are required");
+    if (empty($username) || empty($childsname) || empty($moh) || empty($password) || empty($email) || empty($lastname) || empty($mobilenumber) || empty($confirmpassword)) {
+        header("Location: registerparent.html?error=All fields are required");
         exit();
     } else if ($password !== $confirmpassword) {
         header("Location: registerparent.html?error=Passwords do not match");
@@ -47,14 +45,14 @@ if (isset($_POST['username']) && isset($_POST['childsname']) && isset($_POST['do
                 exit();
             } else {
                 // Insert new parent
-                $sql = "INSERT INTO parent (Username, ChildsName, DOB, Weight, Password, Email, MothersName, MOHArea, MobileNumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO parent (Username, ChildsName, MOHArea, Password, Email, LastName, MobileNumber) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     echo "SQL error";
                     exit();
                 } else {
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
-                    mysqli_stmt_bind_param($stmt, "sssssssss", $username, $childsname, $dob, $weight, $hashed_password, $email, $mothersname, $moharea, $mobilenumber);
+                    mysqli_stmt_bind_param($stmt, "sssssss", $username, $childsname, $moh, $hashed_password, $email, $lastname, $mobilenumber);
                     mysqli_stmt_execute($stmt);
                     header("Location: loginparent.html?success=Account created successfully");
                     exit();

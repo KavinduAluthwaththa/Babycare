@@ -15,35 +15,35 @@ if (isset($_POST['register_btn'])) {
     $confirmpassword = mysqli_real_escape_string($conn, $_POST['confirmpassword']);
 
     if ($password === $confirmpassword) {
-        $checkemail = "SELECT email FROM midwife WHERE email='$email' LIMIT 1";
+        $checkemail = "SELECT email FROM parent WHERE email='$email' LIMIT 1";
         $checkemail_run = mysqli_query($conn, $checkemail);
 
         if (mysqli_num_rows($checkemail_run) > 0) {
             $_SESSION['message'] = "Email Already Exists";
-            header("Location: registermidwife.php");
+            header("Location: registerparent.php");
             exit(0);
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            $user_query = "INSERT INTO midwife (fname, lname, username, email, password, moh, wno, tno, nic) VALUES ('$fname', '$lname', '$username', '$email', '$hashed_password', '$moh', '$wno', '$tno', '$nic')";
+            $user_query = "INSERT INTO parent (fname, lname, username, email, password, moh, wno, tno, nic) VALUES ('$fname', '$lname', '$username', '$email', '$hashed_password', '$moh', '$wno', '$tno', '$nic')";
             $user_query_run = mysqli_query($conn, $user_query);
 
             if ($user_query_run) {
                 $_SESSION['message'] = "Registered Successfully";
-                header("Location: loginmidwife.php");
+                header("Location: loginparent.php");
                 exit(0);
             } else {
                 $_SESSION['message'] = "Something Went Wrong!";
-                header("Location: registermidwife.php");
+                header("Location: registerparent.php");
                 exit(0);
             }
         }
     } else {
         $_SESSION['message'] = "Password and Confirm Password do not match";
-        header("Location: registermidwife.php");
+        header("Location: registerparent.php");
         exit(0);
     }
 } else {
-    header("Location: registermidwife.php");
+    header("Location: registerparent.php");
     exit();
 }
 ?>

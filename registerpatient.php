@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page Midwife</title>
+    <title>Register Page Parent</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="Styles/register.css" rel="stylesheet">
 </head>
@@ -29,7 +29,7 @@
                 <h2 style="text-align: center; font-weight: bold;">Baby Care System</h2>
                 <h6 style="text-align: center; font-size: smaller; color: #343a40;">As a Parent</h6>
 
-                <form class="registration-form" action="regmid.php" method="post">
+                <form class="registration-form" action="regpar.php" method="post">
                     
                     <div class="container">
                         <div class="row">
@@ -82,7 +82,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="wno">Mobile Number</label>
+                                    <label for="wno">Whatsapp Number</label>
                                     <input type="tel" class="form-control" id="wno" name="wno" placeholder="Enter Whatsapp Number" required>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                             <div class="col">
                                 <div class="bottom-actions">
                                     <button type="submit" name="register_btn" class="btn btn-primary btn-block">Register</button>
-                                    <p>Already have an account ? <a href="loginmidwife.php">Login</a></p>
+                                    <p>Already have an account ? <a href="loginparent.php">Login</a></p>
                                 </div>
                             </div>
                         </div>

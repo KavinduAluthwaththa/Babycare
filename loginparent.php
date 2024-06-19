@@ -9,21 +9,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $myemail = mysqli_real_escape_string($conn,$_POST['email']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
 
-      $sql = "SELECT * FROM parent WHERE email = '$myemail' and password = '$mypassword'";
+      $sql = "SELECT password FROM parent WHERE email = '$myemail'";
 
       $result = mysqli_query($conn,$sql);      
-      $row = mysqli_num_rows($result);      
-      $count = mysqli_num_rows($result);
+      
+      if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        $hashed_password = $row['password'];
 
-      if($count == 1) {
-	  
-         // session_register("myusername");
-         $_SESSION['login_user'] = $myemail;
-         header("location: Home.html");
-      } else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+        if (password_verify($mypassword, $hashed_password)) {
+            // Password is correct
+            $_SESSION['login_user'] = $myemail; // You can store other user information in session if needed
+            $_SESSION['message'] = "Login Successful";
+            header("Location: Dashboardparent.php");
+            exit();
+        } else {
+            // Invalid password
+            $_SESSION['message'] = "Invalid Email or Password";
+            header("Location: loginparent.php");
+            exit();
+        }
+    } else {
+        // User not found
+        $_SESSION['message'] = "Invalid Email or Password";
+        header("Location: loginparent.php");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +182,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <button type="submit" class="btn btn-primary mt-3" style="background-color: #6358DC;">Login</button>
                 <div class="register-link">
-                    <p>Don't have an account ? <a href="registerpatient.html">Register</a></p>
+                    <p>Don't have an account ? <a href="registerpatient.php">Register</a></p>
                 </div>
             </form>
         </div>

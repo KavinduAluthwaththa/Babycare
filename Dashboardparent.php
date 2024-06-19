@@ -5,20 +5,22 @@ include "DBcon.php";
 
 // Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION['login_user'])){
-   header("location: loginmidwife.php");
+   header("location: loginparent.php");
    die();
 }
 
 $login_session = $_SESSION['login_user'];
 
 // Prepare and bind
-$stmt = $conn->prepare('SELECT fname, lname, moh, nic, wno, tno, email FROM midwife WHERE email = ?');
+$stmt = $conn->prepare('SELECT idparent,fname, lname, moh, nic, wno, tno, email FROM parent WHERE email = ?');
 $stmt->bind_param('s', $_SESSION['login_user']);
 $stmt->execute();
 $stmt->bind_result($fname, $lname, $moh, $nic, $wno, $tno, $email);
 $stmt->fetch();
 
 // Store the fetched data in session variables
+
+$_SESSION['idparent'] = $idparent;
 $_SESSION['fname'] = $fname;
 $_SESSION['lname'] = $lname;
 $_SESSION['moh'] = $moh;
@@ -47,21 +49,21 @@ $conn->close();
   </head>
   <body>
 
-  <script>
-  function logout() {
-      // Send a request to logout.php
-      fetch('logout.php', {
-          method: 'POST', // You can also use GET if preferred
-          credentials: 'same-origin' // To send cookies along with the request
-      })
-      .then(response => {
-          if (response.redirected) {
-              window.location.href = response.url; // Redirect to login.php
-          }
-      })
-      .catch(error => console.error('Error:', error));
-  }
-  </script>
+    <script>
+    function logout() {
+        // Send a request to logout.php
+        fetch('logout.php', {
+            method: 'POST', // You can also use GET if preferred
+            credentials: 'same-origin' // To send cookies along with the request
+        })
+        .then(response => {
+            if (response.redirected) {
+                window.location.href = response.url; // Redirect to login.php
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
       
       <nav>
       <ul class="sidebar">
@@ -140,7 +142,7 @@ $conn->close();
 			</form>
 
 			<div class="container">
-				<button class="logout" onclick="logout()">Logout</button>
+      <button class="logout" onclick="logout()">Logout</button>
 			</div>
 			
             </div>

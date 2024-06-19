@@ -104,8 +104,8 @@
                 <form class="registration-form" action="PHP/RegisterChild.php" method="post">
                     <div class="left-side">
                         <div class="form-group">
-                            <label for="childsname">First Name</label>
-                            <input type="text" class="form-control" id="childsname" name="childsname" placeholder="Enter child's name" required>
+                            <label for="fname">First Name</label>
+                            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter child's name" required>
                         </div>
                         <div class="form-group">
                             <label for="birthweight">Birth Weight</label>
@@ -115,7 +115,7 @@
                     <div class="right-side">
                         <div class="form-group">
                             <label for="lastname">Last Name</label>
-                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter last name" required>
+                            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter last name" required>
                         </div>
                         <div class="form-group">
                             <label for="dob">DOB</label>

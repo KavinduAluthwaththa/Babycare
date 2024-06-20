@@ -174,3 +174,11 @@ nav li:first-child{
     align-items: center;
     width: 100%;
 }
+
+.list{
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,41 +1,3 @@
-<?php
-// Start the session
-session_start();
-include "DBcon.php";
-
-// Check if the user is logged in, if not then redirect to login page
-if(!isset($_SESSION['login_user'])){
-   header("location: loginmidwife.php");
-   die();
-}
-
-$login_session = $_SESSION['login_user'];
-
-// Prepare and bind
-$stmt = $conn->prepare('SELECT fname, lname, moh, nic, wno, tno, email FROM midwife WHERE email = ?');
-$stmt->bind_param('s', $_SESSION['login_user']);
-$stmt->execute();
-$stmt->bind_result($fname, $lname, $moh, $nic, $wno, $tno, $email);
-$stmt->fetch();
-
-// Store the fetched data in session variables
-$_SESSION['fname'] = $fname;
-$_SESSION['lname'] = $lname;
-$_SESSION['moh'] = $moh;
-$_SESSION['nic'] = $nic;
-$_SESSION['wno'] = $wno;
-$_SESSION['tno'] = $tno;
-$_SESSION['email'] = $email;
-
-$stmt->close();
-
-$parents_stmt = $conn->prepare('SELECT idparent, fname, lname, email FROM parent WHERE moh = ?');
-$parents_stmt->bind_param('s', $_SESSION['moh']);
-$parents_stmt->execute();
-$parents_result = $parents_stmt->get_result();
-
-$conn->close();
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -53,21 +15,6 @@ $conn->close();
   </head>
   <body>
 
-  <script>
-  function logout() {
-      // Send a request to logout.php
-      fetch('logout.php', {
-          method: 'POST', // You can also use GET if preferred
-          credentials: 'same-origin' // To send cookies along with the request
-      })
-      .then(response => {
-          if (response.redirected) {
-              window.location.href = response.url; // Redirect to login.php
-          }
-      })
-      .catch(error => console.error('Error:', error));
-  }
-  </script>
       
       <nav>
       <ul class="sidebar">
@@ -147,10 +94,10 @@ $conn->close();
 
             
             <h4>Parents in the same MOH area:</h4>
-            <ul class="list">
+            <ul>
                 <?php while ($parent = $parents_result->fetch_assoc()) : ?>
                     <li>
-                        <a href="viewpar.php?id=<?= $parent['idparent'] ?>">
+                        <a href="parent_profile.php?id=<?= $parent['id'] ?>">
                             <?= htmlspecialchars($parent['fname'], ENT_QUOTES) ?> <?= htmlspecialchars($parent['lname'], ENT_QUOTES) ?> (<?= htmlspecialchars($parent['email'], ENT_QUOTES) ?>)
                         </a>
                     </li>

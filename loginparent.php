@@ -1,3 +1,43 @@
+<?php
+session_start();
+
+include "DBcon.php";
+$error='';
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+      // username and password sent from form 
+      $myemail = mysqli_real_escape_string($conn,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
+
+      $sql = "SELECT password FROM parent WHERE email = '$myemail'";
+
+      $result = mysqli_query($conn,$sql);      
+      
+      if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        $hashed_password = $row['password'];
+
+        if (password_verify($mypassword, $hashed_password)) {
+            // Password is correct
+            $_SESSION['login_user'] = $myemail; // You can store other user information in session if needed
+            $_SESSION['message'] = "Login Successful";
+            header("Location: Dashboardparent.php");
+            exit();
+        } else {
+            // Invalid password
+            $_SESSION['message'] = "Invalid Email or Password";
+            header("Location: loginparent.php");
+            exit();
+        }
+    } else {
+        // User not found
+        $_SESSION['message'] = "Invalid Email or Password";
+        header("Location: loginparent.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +51,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"/>
-    <link rel="stylesheet" href="Styles/hf.css">
     <link rel="stylesheet" href="Styles/login.css">
     <style>
         .container {
@@ -106,26 +145,6 @@
 </head>
 <body>
 
-    <nav>
-    <ul class="sidebar">
-        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="">Profile</a></li>
-        <li><a href="Information.html">Information</a></li>
-        <li><a href="aboutus2.html">About</a></li>
-        <li><a href="contact us.html">Contact</a></li>
-    </ul>
-    <ul>
-        <li><img class="logo1" src="Images/Logo.png" alt="LogoImg" id="logo"></li>
-        <li class="hideOnMobile"><a href="Home.html">Home</a></li>
-        <li class="hideOnMobile"><a href="#">Profile</a></li>
-        <li class="hideOnMobile"><a href="Information.html">Information</a></li>
-        <li class="hideOnMobile"><a href="aboutus2.html">About</a></li>
-        <li class="hideOnMobile"><a href="contact us.html">Contact</a></li>
-        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
-    </ul>
-    </nav>
-
     <div class="container">
         <div class="left-section">
             <img src="Images/LoginPage.png" alt="Description of Image">
@@ -142,7 +161,7 @@
             </a>
           
             <p class="lead">or</p>
-            <form action="PHP/Loginp.php" method="post">
+            <form action="" method="post">
                 <div class="form-group">
                     <!--<label for="email">Enter email address</label>-->
                     <input type="email" class="form-control" id="email" placeholder="Enter email">
@@ -151,6 +170,9 @@
                     <!--<label for="password">Enter password</label>-->
                     <input type="password" class="form-control" id="password" placeholder="Enter password">
                 </div>
+
+                <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+
                 <div class="form-check">
                     <div>
                         <input type="checkbox" class="form-check-input" id="remember">
@@ -160,61 +182,11 @@
                 </div>
                 <button type="submit" class="btn btn-primary mt-3" style="background-color: #6358DC;">Login</button>
                 <div class="register-link">
-                    <p>Don't have an account ? <a href="registerpatient.html">Register</a></p>
+                    <p>Don't have an account ? <a href="registerpatient.php">Register</a></p>
                 </div>
             </form>
         </div>
     </div>
-    <div class="footer">
-      <footer>
-
-        <div class="div">
-          <b class="lets-start-together"> Let’s start together.</b>
-        </div>
-
-              <div class="contentx">
-                <div class="link-boxes">
-                  <ul class="box">
-                      <div class="logo-details">
-                          <img class="logoo" src="Images/Logo.png" alt="">
-                      </div>
-                  </ul>
-                  <ul class="box">
-                      <li class="link_name">Pages</li>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Profile</a></li>
-                      <li><a href="#">Information</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Contact</a></li>
-        
-                  </ul>
-                    <ul class="box">
-                      <li class="link_name">Contact</li>
-                      <li>74/1, </li>
-                      <li>Kandy Rd,</li>
-                      <li>Matale</li>
-                    </ul>
-                    
-                  <div class="top">
-                      <div class="media-icons">
-                          <a href="#"><i class="fab fa-facebook-f"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                  </div>   
-                  
-                </div>
-              </div>
-              <div class="bottom-details">
-                <div class="bottom_text">
-                  <span class="copyright_text">Copyright © Baby Care</span>
-                </div>
-              </div>
-            </footer>
-    </div>
-
-
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

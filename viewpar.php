@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="Styles/index.css" />
+	<link rel="stylesheet" href="Styles/dash.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap"/>
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
@@ -12,13 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"/>
   </head>
-  
   <body>
+
       
       <nav>
       <ul class="sidebar">
           <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
           <li><a href="Home.html">Home</a></li>
+          <li><a href="">Profile</a></li>
           <li><a href="Information.html">Information</a></li>
           <li><a href="aboutus2.html">About</a></li>
           <li><a href="contact us.html">Contact</a></li>
@@ -26,6 +28,7 @@
       <ul>
           <li><img class="logo1" src="Images/Logo.png" alt="LogoImg" id="logo"></li>
           <li class="hideOnMobile"><a href="Home.html">Home</a></li>
+          <li class="hideOnMobile"><a href="#">Profile</a></li>
           <li class="hideOnMobile"><a href="Information.html">Information</a></li>
           <li class="hideOnMobile"><a href="aboutus2.html">About</a></li>
           <li class="hideOnMobile"><a href="contact us.html">Contact</a></li>
@@ -33,92 +36,82 @@
       </ul>
       </nav>
 
-      <div class="banner">
-        <div class="display-text">
-          <b class="lets-start-together">
-            <p class="home">Timely Injections</p>
-            <p class="home">for Healthy Beginnings</p>
-          </b>
-          <img class="text-icon" alt="" src="Images/HomeBanner.png" />
-        </div>
-      </div>
-      
-      <div class="about1">
-        <div class="title1">
-          <b class="vaccination-information">
-            <span>What is Baby Care ?</span>
-          </b>
-        </div>
-            <div class="text2">
-              
-              <div class="welcome-to-baby">
-                Welcome to Baby Care Reminder System, 
-                your reliable solution for staying on top of your baby's vaccination schedule.
-                Say goodbye to missed injections and unnecessary worries! 
-                Our automated system sends timely reminders to ensure your baby receives 
-                the necessary vaccinations, while also providing valuable information and support.
-                Join us in safeguarding your baby's health and well-being every step of the way.
-              </div>
-              
-              <div class="welcome-to-baby">
-                Are you ready to embark on a journey of nurturing and growth
-                with your little one? Join our baby care system today to access
-                a wealth of resources, tips, and support tailored to your
-                child's needs.
-
+	  <div class="container">
+        <div class="form-container">
+            <div class="form-box">
                 
-              <div class="button-parent">
-
-               
-                <a href="option.html"><button type="button" class="btn btn-outline-dark btn-rounded" data-mdb-ripple-init  data-mdb-ripple-color="dark">Login</button>
-                </a>
-                <a href="signop.html"><button type="button" class="btn btn-outline-dark btn-rounded" data-mdb-ripple-init  data-mdb-ripple-color="dark">SignUp</button>
-                </a>
-              </div>
-              
-              </div>
-            </div>
-      </div>
-
-      <div class="blog">
-          <div class="title">
-            <b class="vaccination-information">
-              <span class="vaccination">Vaccination Information</span>
-            </b>
-          </div>
-
-                <div class="div2">
-
-                  <div class="stay-informed-and">
-                    Stay informed and empowered with our vaccination information
-                    hub. Learn about the importance of vaccinations, recommended
-                    schedules for your baby's first year, and benefits of each
-                    vaccine. Access reliable resources to address concerns and
-                    make informed decisions about your child's health, ensuring
-                    their well-being with confidence.
-                  </div>
-
-                  <img class="vecteezy-doctor" alt="" src="Images/HomeVacInfo.jpeg"/>
-
+			<h2 style="text-align: left; font-weight: bold;">
+				<?=htmlspecialchars($_SESSION['fname'], ENT_QUOTES)?> <?=htmlspecialchars($_SESSION['lname'], ENT_QUOTES)?>
+			</h2>
+				<form class="registration-form">
+                    <div class="left-side">
+                    <div class="form-group">
+                        <label for="username">NIC:</label>
+					</div>
+                    <div class="form-group">
+                        <label for="First name">MOH Area:</label>
+					</div>
+                    <div class="form-group">
+                        <label for="DOB">Email:</label>
+					</div>
+                    <div class="form-group">
+                        <label for="weight">Whatsapp No:</label>
+					</div>
+                    <div class="form-group">
+                        <label for="weight">Contact No:</label>
+					</div>
+                   
                 </div>
-        <div class="button">
-          <a href="Information.html" class="abtbut1"><b class="lets-start-together">More Information</b></a>
+
+                <div class="right-side">
+                    <div class="form-group">
+                        <label for="email">
+							<?=htmlspecialchars($_SESSION['nic'], ENT_QUOTES)?>
+						</label>
+					</div>
+                    <div class="form-group">
+                        <label for="email">
+							<?=htmlspecialchars($_SESSION['moh'], ENT_QUOTES)?>
+						</label>
+					</div>
+                    <div class="form-group">
+                        <label for="email">
+							<?=htmlspecialchars($_SESSION['email'], ENT_QUOTES)?>
+						</label>
+					</div>
+                    <div class="form-group">
+                        <label for="email">
+							<?=htmlspecialchars($_SESSION['wno'], ENT_QUOTES)?>
+						</label>
+					</div>
+                    <div class="form-group">
+                        <label for="email">
+							<?=htmlspecialchars($_SESSION['tno'], ENT_QUOTES)?>
+						</label>
+					</div>
+                </div>
+			</form>
+
+            
+            <h4>Parents in the same MOH area:</h4>
+            <ul>
+                <?php while ($parent = $parents_result->fetch_assoc()) : ?>
+                    <li>
+                        <a href="parent_profile.php?id=<?= $parent['id'] ?>">
+                            <?= htmlspecialchars($parent['fname'], ENT_QUOTES) ?> <?= htmlspecialchars($parent['lname'], ENT_QUOTES) ?> (<?= htmlspecialchars($parent['email'], ENT_QUOTES) ?>)
+                        </a>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+
+			<div class="container">
+				<button class="logout" onclick="logout()">Logout</button>
+			</div>
+			
+            </div>
         </div>
-      </div>
-
-      <div class="team">
-        <div class="background-icon">
-          <b class="about-us1">About Us</b>
-
-          <img class="artboard-1-1" alt="" src="Images/HomeAbout.png" />
-
-        <div class="button">
-
-          <a href="aboutus2.html" class="abtbut"><b class="lets-start">About Us</b></a>
-        </div>
-      </div>
-      </div>
-      
+    </div>
+  
       <div class="footer">
                   <footer>
 
